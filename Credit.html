@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generate dummy credit card numbers for testing and development. Includes options for CVV, expiry date, and cardholder name.">
+  <title>Free Fake Credit Card Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background: #0074D9;
+      color: white;
+    }
+    .main-layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      width: 100%;
+    }
+    .form-wrapper {
+      flex: 1;
+      max-width: 600px;
+      margin: 0 20px;
+    }
+    .form-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #218838;
+    }
+    #generatedOutput {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      margin-top: 20px;
+    }
+    .description {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .ad-placeholder {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .ad-placeholder div {
+      background:#ddd;
+      padding:10px;
+      border:1px dashed #aaa;
+    }
+    .side-ad {
+      width: 160px;
+      margin: 0 10px;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is this credit card generator legal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This generator is for educational and testing purposes only. It does not create real, usable cards."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can I use the generated cards for real transactions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. These are fake card numbers not connected to real banks. They are meant for testing only."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Free Test Credit Card Generator</h1>
+    <p>Generate dummy card numbers with CVV and expiry for developers, QA testers, and learners</p>
+  </header>
+
+  <!-- Top Ad Placeholder (728x90) -->
+  <div class="ad-placeholder">
+    <div>Top Ad Placeholder (728x90)</div>
+  </div>
+
+  <div class="main-layout">
+    <!-- Sidebar Left Ad Placeholder (160x300) -->
+    <div class="side-ad">
+      <div class="ad-placeholder">
+        <div>Sidebar Ad (160x300)</div>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-wrapper">
+      <div class="form-section">
+        <label for="cardType">Select Card Type:</label>
+        <select id="cardType">
+          <option value="visa">Visa</option>
+          <option value="mastercard">MasterCard</option>
+          <option value="amex">American Express</option>
+          <option value="discover">Discover</option>
+          <option value="rupay">Rupay</option>
+        </select>
+
+        <label for="holderName">Cardholder Name:</label>
+        <input type="text" id="holderName" placeholder="Enter name (optional)" />
+
+        <label for="detailsOption">Generation Parameters:</label>
+        <select id="detailsOption">
+          <option value="number">Generate card number only</option>
+          <option value="full">Card number, exp date, and CVC</option>
+        </select>
+
+        <label for="quantity">How Many?</label>
+        <input type="number" id="quantity" min="1" max="10" value="1" />
+
+        <button onclick="generateCard()">Generate</button>
+      </div>
+
+      <!-- Middle Ad Placeholder (468x60) -->
+      <div class="ad-placeholder">
+        <div>Middle Ad Placeholder (468x60)</div>
+      </div>
+
+      <pre id="generatedOutput"></pre>
+    </div>
+
+    <!-- Sidebar Right Ad Placeholder (160x600) -->
+    <div class="side-ad">
+      <div class="ad-placeholder">
+        <div>Sidebar Ad (160x600)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Ad Placeholder (300x250) -->
+  <div class="ad-placeholder">
+    <div>Bottom Ad Placeholder (300x250)</div>
+  </div>
+
+  <!-- Mobile Ad Placeholder (320x50) -->
+  <div class="ad-placeholder">
+    <div>Mobile Ad Placeholder (320x50)</div>
+  </div>
+
+  <div class="description">
+    <h2>Generate Dummy Card Numbers for Testing Purposes</h2>
+    <p>This tool helps you generate random card numbers with optional name, CVV, and expiry date for safe testing, development, or educational purposes only. No real transactions can occur with these details.</p>
+    <p>Use the dropdowns to select card type and generation parameters. Perfect for QA engineers, programmers, fintech startups, and students learning how payments systems work.</p>
+  </div>
+
+  <script>
+    function generateCard() {
+      const type = document.getElementById('cardType').value;
+      const name = document.getElementById('holderName').value || 'John Doe';
+      const detailType = document.getElementById('detailsOption').value;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const output = document.getElementById('generatedOutput');
+      output.textContent = '';
+
+      for (let i = 0; i < quantity; i++) {
+        const cardNumber = Math.floor(Math.random() * 1e15).toString().padStart(16, '4');
+        const expiry = `${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}/${new Date().getFullYear() + 2}`;
+        const cvv = Math.floor(Math.random() * 900 + 100);
+        output.textContent += `Card Type: ${type.toUpperCase()}\nCard Number: ${cardNumber}`;
+        if (detailType === 'full') {
+          output.textContent += `\nExpiry Date: ${expiry}\nCVV: ${cvv}`;
+        }
+        output.textContent += `\nCardholder Name: ${name}\n\n`;
+      }
+    }
+  </script>
+</body>
+</html>
