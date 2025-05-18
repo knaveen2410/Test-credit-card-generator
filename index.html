@@ -99,6 +99,58 @@
       width: 160px;
       margin: 0 10px;
     }
+@media screen and (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .side-ad {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .form-section, .description {
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  header {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    margin: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  input, select, button {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  #generatedOutput {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
+
   </style>
   <script type="application/ld+json">
   {
